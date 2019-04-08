@@ -2,4 +2,8 @@
 api para mercado libre
 
 # iniciar aplicacion
-npm run dev
+Instalar
+- Nodemon: npm install nodemon -g
+
+Ejecutar
+- npm run dev

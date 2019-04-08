@@ -7,7 +7,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2)
 
 //routes
-app.use(require('./routes/route'));
+app.use(require('./routes/items'));
 
 //middlewares
 app.use(morgan('dev'));
