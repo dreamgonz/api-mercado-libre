@@ -1,18 +1,20 @@
 const { Router } = require('express');
+const axios = require('axios');
 const router = Router();
 
+
 router.get('/api/items', (req,res) => {
-    let data = [
-        {
-            "itemid": 1,
-            "nombreProducto": "Alicia en el pais de las Maravillas"
-        },
-        {
-            "itemid": 2,
-            "nombreProducto": "Ami el niño de las Estrellas"
+    axios.get('https://api.mercadolibre.com/sites/MLA/search',{ 
+        params: {
+            q: req.query.q
         }
-    ]
-    res.json(data);
+    })
+    .then((response) => {
+        res.json(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 });
 
 module.exports = router;
